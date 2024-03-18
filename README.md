@@ -1,1 +1,1 @@
-<a href="https://timur3030.github.io/music/" target="_blank"><h1 align="center">Audio Player</h1><img width="32" height="32" alt="logo" src="https://github.com/timur3030/music/assets/109113456/b73ea226-c000-487d-bce6-b19f5ce4cff6"></a> 
+<a href="https://timur3030.github.io/music/" target="_blank"><h1 display="inline" align="center">Audio Player</h1><img width="16" height="16" alt="logo" src="https://github.com/timur3030/music/assets/109113456/b73ea226-c000-487d-bce6-b19f5ce4cff6"></a> 

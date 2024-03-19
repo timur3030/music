@@ -83,12 +83,19 @@
 @media (max-width: 576px) or (max-height: 576px) {
   .main {
     padding: 0;
-    height: calc(100svh - 80px);
+    /* height: calc(100svh - 80px); */
+    height: calc(100dvh - 80px);
   }
   .player {
     width: 80%;
     height: 88%;
     max-height: 605px;
+  }
+  .footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
   }
 }
 

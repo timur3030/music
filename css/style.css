@@ -63,6 +63,23 @@
   z-index: -1;
 }
 
+.player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.player__controls-img {
+  width: 32px;
+  height: 32px;
+}
+
+.player__controls-img img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 576px) or (max-height: 576px) {
   .main {
     padding: 0;

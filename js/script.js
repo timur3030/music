@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let play = document.querySelector(".play");
   let pause = document.querySelector(".pause");
   let prev = document.querySelector(".prev");
+  let volumemax = document.querySelector(".volume-max");
+  let volumemin = document.querySelector(".volume-min");
   let isPlaying = false;
   let isPaused = false;
   let isStopped = false;
@@ -20,6 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.play();
     }
     play.classList.toggle("pause");
+  });
+
+  volumemax.addEventListener("click", () => {
+    console.log("Audio Player");
+    audio.volume = 1;
+  });
+
+  volumemin.addEventListener("click", () => {
+    console.log("Audio Player");
+    audio.volume = 0;
   });
 
   // console.log(play);

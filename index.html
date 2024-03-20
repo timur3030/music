@@ -88,30 +88,45 @@
     <header class="header">Audio Player</header>
     <main class="main">
       <div class="player">
-        <audio controls src="music/tom_odell_-_another_love.mp3">Mp3</audio>
-        <audio src="music/madrigal-dip.mp3">777</audio>
-        <h1>Audio</h1>
-        <div class="player__controls">
-          <div class="player__controls-img prev">
-            <img src="icons/prev.svg" alt="" />
+        <div class="player__content">
+          <audio src="music/tom_odell_-_another_love.mp3">Mp3</audio>
+          <audio src="music/madrigal-dip.mp3">777</audio>
+          <h1>Audio</h1>
+          <div class="player__duration">
+            <div class="player__duration-bar">
+              <div class="player__duration-scale"></div>
+            </div>
           </div>
-          <div class="player__controls-img play">
-            <img src="icons/play.svg" alt="" />
+          <div class="player__controls">
+            <div class="player__controls-img prev">
+              <img src="icons/prev.svg" alt="" />
+            </div>
+            <div class="player__controls-img play">
+              <img src="icons/play.svg" alt="" />
+            </div>
+            <div class="player__controls-img next">
+              <img src="icons/next.svg" alt="" />
+            </div>
           </div>
-          <div class="player__controls-img next">
-            <img src="icons/next.svg" alt="" />
-          </div>
-          <div class="player__controls-img volume-max">
-            <img src="icons/volume-max.svg" alt="" />
-          </div>
-          <div class="player__controls-img volume-min">
-            <img src="icons/volume-min.svg" alt="" />
+          <div class="player__volume">
+            <div class="player__volume-img volume-min">
+              <img src="icons/volume-min.svg" alt="" />
+            </div>
+            <div class="player__volume-bar">
+              <div class="player__volume-scale"></div>
+            </div>
+            <div class="player__volume-img volume-max">
+              <img src="icons/volume-max.svg" alt="" />
+            </div>
           </div>
         </div>
       </div>
     </main>
     <footer class="footer">
-      2024<a href="https://www.timur-biker.ru">www.timur-biker.ru</a>
+      <div class="footer__year">©2024</div>
+      <a class="footer__link" href="https://www.timur-biker.ru" target="_blank"
+        >www.timur-biker.ru</a
+      >
     </footer>
 
     <script type="module" src="js/script.js"></script>

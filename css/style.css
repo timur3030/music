@@ -147,8 +147,7 @@ h1 {
   } */
 
   .header,
-  .footer,
-  .main {
+  .footer {
     background: #b92e3b;
   }
   .player {

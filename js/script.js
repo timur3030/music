@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.pause(120);
       play.classList.remove("playing");
     } else {
-      
       e.target.firstElementChild.src = "icons/pause.svg";
       audio.play();
+      audio.currentTime = range.value;
       i.textContent = audio.currentTime;
       h2.textContent = range.value;
-      audio.currentTime = range.value;
       play.classList.add("playing");
       range.max = audio.duration;
       if (timer > 1) {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timer = 0;
             return;
           }
-          // range.value = audio.currentTime;
+          range.value = audio.currentTime;
         }, 1000);
       }
     }

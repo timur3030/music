@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       play.classList.remove("playing");
     } else {
       e.target.firstElementChild.src = "icons/pause.svg";
+      audio.currentTime = range.value;
       audio.play();
       // audio.currentTime = range.value;
       play.classList.add("playing");

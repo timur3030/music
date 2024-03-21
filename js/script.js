@@ -21,25 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       e.target.firstElementChild.src = "icons/pause.svg";
       audio.play();
-      audio.currentTime = range.value;
-      i.textContent = audio.currentTime;
-      h2.textContent = range.value;
+      // audio.currentTime = range.value;
+      // i.textContent = audio.currentTime;
+      // h2.textContent = range.value;
       play.classList.add("playing");
       range.max = audio.duration;
-      // if (timer > 1) {
-      //   null;
-      // } else {
-      //   timer = setInterval(() => {
-          
-      //     if (audio.ended) {
-      //       audioEnds();
-      //       clearInterval(timer);
-      //       timer = 0;
-      //       return;
-      //     }
-      //     range.value = audio.currentTime;
-      //   }, 1000);
-      // }
+      if (timer > 1) {
+        null;
+      } else {
+        timer = setInterval(() => {
+          if (audio.ended) {
+            audioEnds();
+            clearInterval(timer);
+            timer = 0;
+            return;
+          }
+          range.value = audio.currentTime;
+        }, 1000);
+      }
     }
   });
 
@@ -62,9 +61,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   range.addEventListener("change", () => {
-    audio.currentTime = range.value;
+    if (audio.paused) {
+      audio.play();
+      audio.currentTime = range.value;
+      audio.pause();
+    } else {
+      audio.currentTime = range.value;
+    }
+    i.textContent = audio.currentTime;
+    h2.textContent = range.value;
     // h2.textContent = audio.currentTime;
-    console.log(range.value);
+    // console.log(audio.paused);
   });
 
   function audioEnds() {

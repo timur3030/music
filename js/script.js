@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.target.firstElementChild.src = "icons/pause.svg";
       audio.play();
       audio.currentTime = range.value;
-      
+
       h2.textContent = range.value;
       play.classList.add("playing");
       range.max = audio.duration;
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
             timer = 0;
             return;
           }
-          range.value = audio.currentTime;
           i.textContent = audio.currentTime;
+          range.value = audio.currentTime;
         }, 1000);
       }
     }

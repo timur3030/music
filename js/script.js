@@ -19,10 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.pause(120);
       play.classList.remove("playing");
     } else {
-      i.textContent = audio.currentTime;
-      h2.textContent = range.value;
+      
       e.target.firstElementChild.src = "icons/pause.svg";
       audio.play();
+      i.textContent = audio.currentTime;
+      h2.textContent = range.value;
       audio.currentTime = range.value;
       play.classList.add("playing");
       range.max = audio.duration;

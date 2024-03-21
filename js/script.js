@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timer = 0;
             return;
           }
-          range.value = audio.currentTime;
+          // range.value = audio.currentTime;
         }, 1000);
       }
     }

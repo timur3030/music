@@ -126,7 +126,21 @@
 }
 
 .player__duration {
+  -webkit-appearance: none;
   width: 100%;
+  height: 6px;
+  background: #a0414a;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.player__duration::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #a0414a;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
 
 h1 {

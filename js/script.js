@@ -2,26 +2,39 @@ import { songs } from "./songs.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   let audio = document.querySelector("audio");
-  let h1 = document.querySelector("h1");
-  let start = document.querySelector(".start");
   let play = document.querySelector(".play");
   let pause = document.querySelector(".pause");
   let prev = document.querySelector(".prev");
   let volumemax = document.querySelector(".volume-max");
   let volumemin = document.querySelector(".volume-min");
-  let isPlaying = false;
-  let isPaused = false;
-  let isStopped = false;
+  let range = document.querySelector(".player__duration");
+  let timer = 0;
+  range.value = 0;
 
   play.addEventListener("click", (e) => {
-    if (e.target.classList.contains("pause")) {
-      e.target.innerHTML = '<img src="icons/play.svg" alt="" />';
+    if (e.target.classList.contains("playing")) {
+      e.target.firstElementChild.src = "icons/play.svg";
       audio.pause();
+      play.classList.remove("playing");
     } else {
-      e.target.innerHTML = '<img src="icons/pause.svg" alt="" />';
+      e.target.firstElementChild.src = "icons/pause.svg";
       audio.play();
+      play.classList.add("playing");
+      range.max = audio.duration;
+      if (timer > 1) {
+        null;
+      } else {
+        timer = setInterval(() => {
+          if (audio.ended) {
+            audioEnds();
+            clearInterval(timer);
+            timer = 0;
+            return;
+          }
+          range.value = audio.currentTime;
+        }, 1000);
+      }
     }
-    play.classList.toggle("pause");
   });
 
   volumemax.addEventListener("click", () => {
@@ -34,7 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.volume = 0;
   });
 
-  // console.log(play);
-  // console.log(pause);
-  // console.log("Audio Player");
+  range.addEventListener("input", () => {
+    range.max = audio.duration;
+  });
+
+  range.addEventListener("change", () => {
+    audio.currentTime = range.value;
+  });
+
+  function audioEnds() {
+    play.firstElementChild.src = "icons/play.svg";
+    range.value = 0;
+    play.classList.remove("playing");
+  }
 });

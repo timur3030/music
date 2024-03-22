@@ -58,11 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(range.max);
     // console.log(audio.currentTime);
     // i.textContent = audio.currentTime;
+    audio.currentTime = range.value;
+    // setTimeout(() => {
+    //   console.log(audio);
+    //   audio.play();
+    // }, 500);
   });
 
-  range.addEventListener("change", () => {
-    audio.currentTime = range.value;
-    audio.play();
+  // range.addEventListener("change", () => {
+    // audio.play();
+    // audio.currentTime = range.value;
+    
     // if (audio.paused) {
     //   audio.play();
     //   audio.currentTime = range.value;
@@ -70,11 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // } else {
     //   audio.currentTime = range.value;
     // }
-    i.textContent = audio.currentTime;
-    h2.textContent = `${audio.paused}`;
+    // i.textContent = audio.currentTime;
+    // h2.textContent = `${audio.paused}`;
     // h2.textContent = audio.currentTime;
     // console.log(audio.paused);
-  });
+  // });
 
   function audioEnds() {
     play.firstElementChild.src = "icons/play.svg";

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.currentTime = range.value;
     }
     i.textContent = audio.currentTime;
-    h2.textContent = range.value;
+    h2.textContent = `${audio.paused}`;
     // h2.textContent = audio.currentTime;
     // console.log(audio.paused);
   });

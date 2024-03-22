@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   play.addEventListener("click", (e) => {
     if (e.target.classList.contains("playing")) {
       e.target.firstElementChild.src = "icons/play.svg";
-      audio.pause(120);
+      audio.pause();
       play.classList.remove("playing");
     } else {
       e.target.firstElementChild.src = "icons/pause.svg";
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   volumemax.addEventListener("click", () => {
-    // console.log("Audio Player");
-    // audio.volume = 1;
+    console.log("Audio Player");
+    audio.volume = 1;
     // console.log(audio.currentTime);
   });
 
